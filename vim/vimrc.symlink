@@ -1,0 +1,157 @@
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" Syntax highlighting
+if has("syntax") && (&t_Co > 2 || has("gui_running"))
+  syntax on
+endif
+
+" Enable filetype plugin
+filetype on
+filetype plugin on
+filetype indent on
+
+" Set to autoread when a file is modified from the outside
+set autoread
+
+" Leader
+let mapleader = ","
+let g:mapleader = ","
+
+" Fast editing of vimrc
+nmap <leader>e :e! ~/.vimrc<cr>
+
+" saves a file
+nmap <leader>s :w<CR>
+imap <leader>s <ESC>:w<CR>
+vmap <leader>s <ESC>:w<CR>
+
+" Show trailing whitespace in a file
+map <leader>ws /\s\+$<cr>
+
+" Reload vimrc when edited
+autocmd! bufwritepost vimrc source ~/.vimrc
+
+" Interface
+set ruler
+
+" Set some extra lines for scope
+set scrolloff=5
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" Searching
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" Turn off search highlighting
+nnoremap <leader><space> :noh<CR>
+
+if has('guirunning')
+  set lines=50
+  set columns=180
+endif
+
+" No sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+
+set encoding=utf8
+try
+  lang en_US
+catch
+endtry
+
+set ffs=unix,dos,mac " Default file types
+
+" Backup stuff
+set nobackup
+set nowb
+set noswapfile
+
+" Tabs
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set smarttab
+set ai " Auto indent
+set si " Smart indent
+set wrap " Wrap lines
+
+set foldmethod=indent
+set foldlevel=100
+
+" let lbr
+set tw=500
+
+" Move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+set history=50		" keep 50 lines of command line history
+set showcmd		" display incomplete commands
+set showmode
+set scrolljump=5
+set scrolloff=3
+set wildmenu
+set wildmode=list:longest
+set nospell
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+" It turns out having the cursor jump becaus I accidentally touched the
+" mousepad sucks. Disabling this.
+"
+" if has('mouse')
+"   set mouse=a
+" endif
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  " Also don't do it when the mark is in the first line, that is the default
+  " position when opening a file.
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  augroup END
+endif " has("autocmd")
+
+" Plugins
+" Cool sites to check out:
+"   http://mirnazim.org/writings/vim-plugins-i-use/
+
+" Pathogen
+call pathogen#infect()
+
+" solarized
+set background=dark
+set t_Co=16
+colorscheme solarized
+call togglebg#map("<F9>")
+
+" NERDTree
+autocmd VimEnter * nmap <leader>3 :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
+let NERDTreeWinSize=35
+
+" Command-T
+noremap <leader>o <Esc>:CommandT<CR>
+noremap <leader>0 <Esc>:CommandTFlush<CR>
+noremap <leader>m <Esc>:CommandTBuffer<CR>

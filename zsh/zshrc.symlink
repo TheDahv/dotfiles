@@ -1,0 +1,88 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/dotfiles/zsh/oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="crunch"
+
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git github npm rails3 rake)
+
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
+export PATH=/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/home/dahv/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/dahv/.rvm/bin
+
+# A shortcut function that simplifies xclip usage
+# - Accepts input from either stdin (pipe) or params
+# - If the input is a filename that exists, then it 
+#   uses the contents of that file
+#   http://madebynathan.com/2011/10/04/a-nicer-way-to-use-xclip/
+cb() { 
+  local _scs_col="\e[0;32m"; local _wrn_col='e[1;31m'; local _trn_col='\e[0;33m'
+  # Check that xclip is installed
+  if ! type xclip > /dev/null 2>&1; then
+    echo -e "$_wrn_col""You must have the 'xclip' program installed.\e[0m"
+  # Check user is not root
+  elif [[ "$USER" == "root" ]]; then
+    echo -e "$_wrn_col""Must be regular user to copy a file to the clipboard.\e[0m"
+  else
+    # If no tty, data should be available on stdin
+    if ! [[ "$( tty )" == /dev/* ]]; then
+      input="$(< /dev/stdin)"
+    # Else, fetch input from params
+    else
+      input="$*"
+    fi
+    if [ -z "$input" ]; then # If no input, print usage message
+      echo "Copies a string or the contents of a file to the clipboard."
+      echo "Usage: cb <string or file>"
+      echo "       echo <string or file> | cb"
+    else
+      # If the input is a filename that exists, then use the contents of that file
+      if [ -f "$input" ]; then input="$(cat $input)"; fi
+      # Copy input to clipboard
+      echo -n "$input" | xclip -selection c
+      # Truncate text for status
+      if [ ${#input} -gt 80]; then input="$(echo $input | cut -c1-80)$_trn_col...\e[0m"; fi
+      # Print status
+      echo -e "$_scs_col""Copied to the clipboard:\e[0m $input"
+    fi
+  fi
+}
+
+# NVM
+# https://github.com/creationix/nvm
+. ~/.nvm/nvm.sh
+
+# Mono F# stuff
+# source ~/Development/mono-dev-env
+
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+
+# Tmux color stuff
+alias tmux="TERM=screen-256color-bce tmux"
