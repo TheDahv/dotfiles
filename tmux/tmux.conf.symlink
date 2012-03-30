@@ -1,0 +1,33 @@
+# http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/
+# http://blog.devth.com/tmux
+
+# Colors
+set -g default-terminal "screen-256color"
+
+# Rebind window commands 
+set -g prefix C-a
+
+# Mouse mode
+set-window-option -g mode-mouse on
+
+# Force conf reload
+bind r display-message "reload source file ~/.tmux.conf" \; source-file ~/.tmux.conf
+
+# Rebind pane splitting of windows
+unbind %
+bind | split-window -h
+
+# unbind '"'
+# bind - split-window -v
+
+# Move panes
+# bind ^h select-pane -L
+# bind ^l select-pane -R
+# bind ^j select-pane -D
+# bind ^k select-pane -U
+ 
+# Split pane
+# bind t split-window -p 25
+
+# Load zsh stuff
+source-file ~/.zshrc
