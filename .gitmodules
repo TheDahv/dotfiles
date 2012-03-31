@@ -31,3 +31,6 @@
 [submodule "vim/vim.symlink/bundle/zencoding-vim"]
 	path = vim/vim.symlink/bundle/zencoding-vim
 	url = git://github.com/mattn/zencoding-vim
+[submodule "vim/vim.symlink/bundle/command-t"]
+	path = vim/vim.symlink/bundle/command-t
+	url = git://git.wincent.com/command-t.git
