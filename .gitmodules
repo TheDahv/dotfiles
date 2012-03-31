@@ -4,3 +4,6 @@
 [submodule "bin/gn-src"]
 	path = bin/gn-src
 	url = git://github.com/holygeek/git-number.git
+[submodule "vim/vim.symlink/bundle/nerdtree"]
+	path = vim/vim.symlink/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree
