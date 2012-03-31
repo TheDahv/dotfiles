@@ -1,3 +1,6 @@
 [submodule "solarized/gnome-terminal-colors-solarized.symlink"]
 	path = solarized/gnome-terminal-colors-solarized.symlink
 	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+[submodule "bin/gn-src"]
+	path = bin/gn-src
+	url = git://github.com/holygeek/git-number.git
