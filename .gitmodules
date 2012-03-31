@@ -28,3 +28,6 @@
 [submodule "vim/vim.symlink/bundle/vim-surround"]
 	path = vim/vim.symlink/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/vim.symlink/bundle/zencoding-vim"]
+	path = vim/vim.symlink/bundle/zencoding-vim
+	url = git://github.com/mattn/zencoding-vim
