@@ -40,3 +40,6 @@
 [submodule "vim/vim.symlink/bundle/fsharp"]
   path = vim/vim.symlink/bundle/fsharp
   url = git://github.com/kongo2002/fsharp-vim.git
+[submodule "vim/vim.symlink/bundle/ctrlp"]
+	path = vim/vim.symlink/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
