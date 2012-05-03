@@ -1,5 +1,5 @@
-[submodule "solarized/gnome-terminal-colors-solarized.symlink"]
-	path = solarized/gnome-terminal-colors-solarized.symlink
+[submodule "solarized/solarized.symlink/gnome-terminal-colors-solarized"]
+	path = solarized/solarized.symlink/gnome-terminal-colors-solarized
 	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
 [submodule "bin/gn-src"]
 	path = bin/gn-src
@@ -37,3 +37,6 @@
 [submodule "vim/vim.symlink/bundle/vim-align"]
 	path = vim/vim.symlink/bundle/vim-align
 	url = git://github.com/tsaleh/vim-align.git
+[submodule "vim/vim.symlink/bundle/fsharp"]
+  path = vim/vim.symlink/bundle/fsharp
+  url = git://github.com/kongo2002/fsharp-vim.git
