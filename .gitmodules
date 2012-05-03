@@ -34,6 +34,6 @@
 [submodule "vim/vim.symlink/bundle/command-t"]
 	path = vim/vim.symlink/bundle/command-t
 	url = git://git.wincent.com/command-t.git
-[submodule "vim-align"]
-	path = vim-align
+[submodule "vim/vim.symlink/bundle/vim-align"]
+	path = vim/vim.symlink/bundle/vim-align
 	url = git://github.com/tsaleh/vim-align.git
