@@ -1,0 +1,21 @@
+[user]
+  name = David Pierce
+  email = david.dean.pierce@gmail.com
+[core]
+  autocrlf = input
+  safecrlf = true
+  editor = vim
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  type = cat-file -t
+  dump = cat-file -p
+  gn = number
+  ga = number add
+
+## Add github user stuff in here later!
