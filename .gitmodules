@@ -43,3 +43,9 @@
 [submodule "vim/vim.symlink/bundle/ctrlp"]
 	path = vim/vim.symlink/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "nvm/nvm.symlink"]
+	path = nvm/nvm.symlink
+	url = git://github.com/creationix/nvm.git
+[submodule "solarized/project"]
+	path = solarized/project
+	url = git://github.com/altercation/solarized.git

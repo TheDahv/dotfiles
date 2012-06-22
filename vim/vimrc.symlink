@@ -142,7 +142,8 @@ call pathogen#infect()
 
 " solarized
 set background=dark
-set t_Co=16
+" set t_Co=16
+let g:solarized_termcolors=256
 colorscheme solarized
 call togglebg#map("<F9>")
 
