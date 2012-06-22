@@ -141,9 +141,10 @@ endif " has("autocmd")
 call pathogen#infect()
 
 " solarized
-set background=dark
 " set t_Co=16
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
+set term=xterm-256color
+set background=light
 colorscheme solarized
 call togglebg#map("<F9>")
 
