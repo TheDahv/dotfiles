@@ -46,6 +46,6 @@
 [submodule "nvm/nvm.symlink"]
 	path = nvm/nvm.symlink
 	url = git://github.com/creationix/nvm.git
-[submodule "solarized/project"]
-	path = solarized/project
+[submodule "solarized/solarized.symlink/project"]
+	path = solarized/solarized.symlink/project
 	url = git://github.com/altercation/solarized.git
