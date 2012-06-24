@@ -34,9 +34,6 @@
 [submodule "vim/vim.symlink/bundle/command-t"]
 	path = vim/vim.symlink/bundle/command-t
 	url = git://git.wincent.com/command-t.git
-[submodule "vim/vim.symlink/bundle/vim-align"]
-	path = vim/vim.symlink/bundle/vim-align
-	url = git://github.com/tsaleh/vim-align.git
 [submodule "vim/vim.symlink/bundle/fsharp"]
   path = vim/vim.symlink/bundle/fsharp
   url = git://github.com/kongo2002/fsharp-vim.git
@@ -49,3 +46,6 @@
 [submodule "solarized/solarized.symlink/project"]
 	path = solarized/solarized.symlink/project
 	url = git://github.com/altercation/solarized.git
+[submodule "vim/vim.symlink/bundle/vim-align"]
+	path = vim/vim.symlink/bundle/vim-align
+	url = git://github.com/tsaleh/vim-align.git
