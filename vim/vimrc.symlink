@@ -152,8 +152,3 @@ call togglebg#map("<F9>")
 autocmd VimEnter * nmap <leader>3 :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=35
-
-" Command-T
-noremap <leader>o <Esc>:CommandT<CR>
-noremap <leader>0 <Esc>:CommandTFlush<CR>
-noremap <leader>m <Esc>:CommandTBuffer<CR>
