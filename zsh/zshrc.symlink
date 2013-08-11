@@ -86,3 +86,51 @@ cb() {
 
 # Tmux color stuff
 alias tmux="TERM=screen-256color-bce tmux"
+
+# Shell color stuff
+
+## Tell ls to be colorful
+export CLICOLOR=1
+
+## Tell grep to highlight matches
+export GREP_OPTIONS='--color=auto'
+
+source "`brew --prefix grc`/etc/grc.bashrc"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+### Add path for Play framework
+export PATH=$PATH:/Users/dahv/bin/play-2.0
+
+## Add VMail Elinks setup
+# export VMAIL_HTML_PART_READER='elinks -dump'
+
+### Add path for Lein
+PATH=$PATH:$HOME/.lein/bin
+
+### Add path for brew Python path to make Pygments work
+export PATH="/usr/local/share/python:${PATH}"
+
+### Add home bin to path
+export PATH=$PATH:$HOME/bin
+
+### AWS Keys
+# ***REMOVED***=***REMOVED***
+# ***REMOVED***=***REMOVED***
+
+# Broken SW Keys
+#***REMOVED***=***REMOVED***
+#***REMOVED***=***REMOVED***
+
+# SW Keys
+***REMOVED***=***REMOVED***
+***REMOVED***=***REMOVED***
+
+### Emacs
+alias emacs="/usr/local/Cellar/emacs/24.2/bin/emacs"
+
+### Online help
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/helpfiles

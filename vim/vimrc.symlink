@@ -22,13 +22,22 @@ let g:mapleader = ","
 " Fast editing of vimrc
 nmap <leader>e :e! ~/.vimrc<cr>
 
+" Toggle line numbers
+nmap <leader>n :set invnumber<CR>
+
 " saves a file
 nmap <leader>s :w<CR>
 imap <leader>s <ESC>:w<CR>
 vmap <leader>s <ESC>:w<CR>
 
+nmap <D-s> :w<CR>
+imap <D-s> <ESC>:w<CR>
+vmap <D-s> <ESC>:w<CR>
+
 " Show trailing whitespace in a file
 map <leader>ws /\s\+$<cr>
+" Delete trailing shitepace in a file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Reload vimrc when edited
 autocmd! bufwritepost vimrc source ~/.vimrc
@@ -144,7 +153,7 @@ call pathogen#infect()
 " set t_Co=16
 " let g:solarized_termcolors=256
 set term=xterm-256color
-set background=light
+set background=dark
 colorscheme solarized
 call togglebg#map("<F9>")
 
@@ -152,3 +161,28 @@ call togglebg#map("<F9>")
 autocmd VimEnter * nmap <leader>3 :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=35
+
+" Tabs to spaces
+function! Tab2spaces() 
+  set et
+  ret!
+endfunction
+map <leader>ts call Tab2spaces()
+
+" Invisible characters
+set list
+set listchars=tab:▸\ ,eol:¬
+
+" EJS highlighting
+au BufNewFile,BufRead *.ejs set filetype=html
+
+" JSON highlighting
+au BufNewFile,BufRead *.json set filetype=javascript
+
+" Gemfile highlighting
+au BufNewFile,BufRead Gemfile set filetype=ruby
+
+let g:lisp_rainbow=1
+" let g:slimv_swank_cmd = '!osascript -e "tell application \"Terminal\" to do script \"clisp ~/.vim/bundle/slimv/slime/start-swank.lisp\""'
+
+set foldmethod=indent

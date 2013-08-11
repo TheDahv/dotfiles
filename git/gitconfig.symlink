@@ -5,6 +5,7 @@
   autocrlf = input
   safecrlf = true
   editor = vim
+  # mergetool.vimdiff.path = /usr/bin/vimdiff
 [alias]
   co = checkout
   ci = commit
@@ -19,3 +20,5 @@
   ga = number add
 
 ## Add github user stuff in here later!
+[heroku]
+	account = personal
