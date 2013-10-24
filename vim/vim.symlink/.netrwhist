@@ -1,7 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/dahv/Development/startupweekend/www.startupweekend.org/.git'
 let g:netrw_dirhist_2='/Users/dahv/Development/startupweekend/locomotive-demo/app/views'
 let g:netrw_dirhist_3='/Users/dahv/Development/startupweekend/locomotive/wagon/app/views/pages'
 let g:netrw_dirhist_4='/Users/dahv/.rvm/gems/ruby-1.9.3-p194@cascadelink-engine/bundler/gems/capistrano-6789ee6dd7a3'
 let g:netrw_dirhist_5='/Users/dahv/.rvm/gems/ruby-1.9.3-p194@cascadelink-engine/bundler/gems/capistrano-rails-0127613473b0'
+let g:netrw_dirhist_6='/Users/dahv/Development/startupweekend/www.up.co/wagon/www.up.co/config'
+let g:netrw_dirhist_7='/Users/dahv/Development/startupweekend/www.swedu.co/wagon/config'
+let g:netrw_dirhist_8='/Users/dahv/Development/startupweekend/swoop'

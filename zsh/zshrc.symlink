@@ -34,7 +34,7 @@ plugins=(git github npm rails3 rake)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/home/dahv/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/dahv/.rvm/bin
+export PATH=/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/home/dahv/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games #:/home/dahv/.rvm/bin
 
 # A shortcut function that simplifies xclip usage
 # - Accepts input from either stdin (pipe) or params
@@ -80,9 +80,6 @@ cb() {
 
 # Mono F# stuff
 # source ~/Development/mono-dev-env
-
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
 
 # Tmux color stuff
 alias tmux="TERM=screen-256color-bce tmux"
@@ -134,3 +131,6 @@ alias emacs="/usr/local/Cellar/emacs/24.2/bin/emacs"
 unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
+
+PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
