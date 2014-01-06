@@ -22,3 +22,5 @@
 ## Add github user stuff in here later!
 [heroku]
 	account = personal
+[push]
+	default = simple
