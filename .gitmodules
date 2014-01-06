@@ -73,3 +73,10 @@
 [submodule "vim/vim.symlink/bundle/funcoo"]
 	path = vim/vim.symlink/bundle/funcoo
 	url = git@github.com:rizzatti/funcoo.vim.git
+[submodule "vim/vim.symlink/bundle/vim-markdown"]
+	path = vim/vim.symlink/bundle/vim-markdown
+	url = git@github.com:plasticboy/vim-markdown.git
+
+[submodule "vim/vim.symlink/bundle/vim-distraction-free"]
+	path = vim/vim.symlink/bundle/vim-distraction-free
+	url = git@github.com:laktek/distraction-free-writing-vim.git

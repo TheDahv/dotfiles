@@ -170,8 +170,8 @@ endfunction
 map <leader>ts call Tab2spaces()
 
 " Invisible characters
-set list
-set listchars=tab:▸\ ,eol:¬
+" set list
+" set listchars=tab:▸\ ,eol:¬
 
 " EJS highlighting
 au BufNewFile,BufRead *.ejs set filetype=html
@@ -186,3 +186,23 @@ let g:lisp_rainbow=1
 " let g:slimv_swank_cmd = '!osascript -e "tell application \"Terminal\" to do script \"clisp ~/.vim/bundle/slimv/slime/start-swank.lisp\""'
 
 set foldmethod=indent
+
+" Distraction-free writing on Markdown files
+" http://www.laktek.com/2012/09/05/distraction-free-writing-with-vim/
+au BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} call DistractionFreeWriting()
+function! DistractionFreeWriting()
+    map <F5> :setlocal spell! spelllang=en_us<CR> " Spellcheck for Macvim
+    colorscheme iawriter
+    set background=light
+    set gfn=Cousine:h14                " font to use
+    set lines=40 columns=100           " size of the editable area
+    set tw=79                          " wrap at 80 characters
+    set fuoptions=background:#00f5f6f6 " macvim specific setting for editor's background color 
+    set guioptions-=r                  " remove right scrollbar
+    set laststatus=0                   " don't show status line
+    set noruler                        " don't show ruler
+    set fullscreen                     " go to fullscreen editing mode
+    set linebreak                      " break the lines on words
+endfunction
+" Turn off MacVim native fullscreen
+" defaults write org.vim.MacVim MMNativeFullScreen 0
